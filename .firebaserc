@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projeto-integrado-cb4bc": {
+      "hosting": {
+        "projeto-integrado": [
+          "projeto-integrado-cb4bc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projeto-integrado-cb4bc"
+  }
+}

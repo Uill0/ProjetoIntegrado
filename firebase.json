@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "projeto-integrado",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

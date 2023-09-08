@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="login.component.css" href="src/app/component/login/login.component.css">
+</head>
+<body class="login">
+    
+<form> 
+<div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Seu email" required>
+</div>
+<div class="form-group">
+    <label form="password">Senha:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Sua senha" required>
+</div>
+<button type="submit" (click)="login()" >Entrar</button>
+</form>
+
+</body>
+</html>
+
