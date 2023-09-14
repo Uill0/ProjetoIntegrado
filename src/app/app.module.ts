@@ -20,7 +20,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HomeComponent } from './component/home/home.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
-import { VarifyEmailComponent } from './component/varify-email/varify-email.component';
+import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
+import { RoomsComponent } from './component/rooms/rooms.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { VarifyEmailComponent } from './component/varify-email/varify-email.comp
     DashboardComponent,
     HomeComponent,
     ForgotPasswordComponent,
-    VarifyEmailComponent
+    VerifyEmailComponent,
+    RoomsComponent,
+   
   ],
   imports: [
     BrowserModule,
