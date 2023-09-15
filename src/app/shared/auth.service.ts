@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
+import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,21 +12,8 @@ export class AuthService {
   loginSuccess: boolean | undefined;
   angularFireAuth: any;
 
-  constructor( private fireauth : AngularFireAuth, private router : Router) { 
-    /*auth.onAuthStateChanged((user: { emailVerified: any; }) => {
-      if(user) {
-        if (user.emailVerified) {
-          this.loginSuccess = true;
-        } else {
-          this.loginSuccess = false;
-        }
-      } else {
-        this.loginSuccess = false;
-      }
-    });
-*/
+  constructor( private fireauth : AngularFireAuth, private router : Router) { }
 
-  }
   
   isLoggedIn(): boolean {
     const isUserAuthenticated = !!this.fireauth.currentUser;
@@ -31,12 +21,11 @@ export class AuthService {
     return !!this.fireauth.currentUser;
   }
 
-
   // metodo de login
   login(email: string, password: string) {
     this.fireauth.signInWithEmailAndPassword(email, password).then((res) => {
       localStorage.setItem('token', 'true');
-  
+
       if (res.user?.emailVerified == true) {
         this.loginSuccess = true; // Login bem-sucedido
         this.router.navigate(['/home']);

@@ -13,7 +13,7 @@ export class AppComponent {
   items$: Observable<any[]>;
 
   constructor() {
-
+    
     const aCollection = collection(this.firestore, 'items')
     this.items$ = collectionData(aCollection);
 }

@@ -48,8 +48,10 @@ import { RoomsComponent } from './component/rooms/rooms.component';
     AngularFireModule.initializeApp(environment.firebase),
     
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
+
   
 })
 export class AppModule { }
