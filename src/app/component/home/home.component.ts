@@ -8,5 +8,9 @@ import { AuthService } from 'src/app/shared/auth.service';
 })
 export class HomeComponent {
 
-  
+  constructor(private auth : AuthService) { }
+
+  logout(){
+    this.auth.logout();
+  }
 }

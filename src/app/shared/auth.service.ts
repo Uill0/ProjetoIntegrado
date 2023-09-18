@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
-import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth';
 
 
 @Injectable({
@@ -11,18 +10,25 @@ import { getAuth, setPersistence, browserLocalPersistence } from 'firebase/auth'
 export class AuthService {
   loginSuccess: boolean | undefined;
   angularFireAuth: any;
-
-  constructor( private fireauth : AngularFireAuth, private router : Router) { }
-
   
+  constructor( private fireauth : AngularFireAuth, private router : Router) {
+    this.fireauth.authState.subscribe(user => {
+      if (user) {
+        console.log('Usuário autenticado:', user);
+      } else {
+        console.log('Nenhum usuário autenticado');
+      }
+    });
+
+   }  
+
   isLoggedIn(): boolean {
-    const isUserAuthenticated = !!this.fireauth.currentUser;
-    console.log("AuthService: isUserAuthenticated =", isUserAuthenticated);
     return !!this.fireauth.currentUser;
   }
 
   // metodo de login
   login(email: string, password: string) {
+ //  this.fireauth.setPersistence('local').then(() => { 
     this.fireauth.signInWithEmailAndPassword(email, password).then((res) => {
       localStorage.setItem('token', 'true');
 
@@ -38,6 +44,7 @@ export class AuthService {
       alert('Algo está errado');
       this.router.navigate(['/login']);
     });
+ // });
   }
   
   //metodo de cadastro
@@ -76,12 +83,11 @@ export class AuthService {
     user.sendEmailVerification().then((res : any) => {
       this.router.navigate(['/verify-email']);
     }, (err : any) => {
-      alert('Algo está errado. Não cosnigo enviar o email de confirmação.')
+      alert('Algo está errado. Não consigo enviar o email de confirmação.')
     })
   }
   }
 
   
-
 
 
