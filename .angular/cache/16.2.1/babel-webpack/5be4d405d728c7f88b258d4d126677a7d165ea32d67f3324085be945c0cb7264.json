@@ -1,1 +1,0 @@
-{"ast":null,"code":"export * from '@firebase/auth';","map":{"version":3,"names":[],"sources":["C:/projeto-integrado/node_modules/@angular/fire/node_modules/firebase/auth/dist/esm/index.esm.js"],"sourcesContent":["export * from '@firebase/auth';\n"],"mappings":"AAAA,cAAc,gBAAgB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
