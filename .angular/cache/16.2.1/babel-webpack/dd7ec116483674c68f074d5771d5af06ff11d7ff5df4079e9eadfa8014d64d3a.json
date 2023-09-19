@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from '@firebase/app-check';","map":{"version":3,"names":[],"sources":["D:/projetoIntegrado/node_modules/@angular/fire/node_modules/firebase/app-check/dist/esm/index.esm.js"],"sourcesContent":["export * from '@firebase/app-check';\r\n\n"],"mappings":"AAAA,cAAc,qBAAqB"},"metadata":{},"sourceType":"module","externalDependencies":[]}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from '@firebase/analytics';","map":{"version":3,"names":[],"sources":["C:/ProjetoIntegrado/node_modules/firebase/analytics/dist/esm/index.esm.js"],"sourcesContent":["export * from '@firebase/analytics';\r\n\n"],"mappings":"AAAA,cAAc,qBAAqB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
