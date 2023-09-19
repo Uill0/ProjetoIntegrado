@@ -1,0 +1,1 @@
+{"ast":null,"code":"export * from '@firebase/remote-config';","map":{"version":3,"names":[],"sources":["C:/ProjetoIntegrado/node_modules/@angular/fire/node_modules/firebase/remote-config/dist/esm/index.esm.js"],"sourcesContent":["export * from '@firebase/remote-config';\r\n\n"],"mappings":"AAAA,cAAc,yBAAyB"},"metadata":{},"sourceType":"module","externalDependencies":[]}

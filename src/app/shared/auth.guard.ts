@@ -7,12 +7,18 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthGuard implements CanActivate {
     constructor(private fireauth: AngularFireAuth, private router: Router) {}
-  
+    private isRedirecting = false;
     async canActivate(): Promise<boolean> {
         return new Promise<boolean>((resolve) => {
-            // Use o método onAuthStateChanged da instância de AngularFireAuth
             this.fireauth.onAuthStateChanged((user) => {
                 if (user) {
+
+                    const currentUrl = this.router.url;
+                    if (currentUrl === '/login' && !this.isRedirecting) {
+                        this.isRedirecting = true;
+                        console.log(this.isRedirecting);
+                        this.router.navigate(['/home']);
+                    }
                     // O usuário está autenticado, permitir acesso a todas as rotas
                     resolve(true);
                 } else {
@@ -23,4 +29,5 @@ export class AuthGuard implements CanActivate {
             });
         });
     }
+    
 }

@@ -14,6 +14,7 @@ export class AuthService {
   constructor( private fireauth : AngularFireAuth, private router : Router) {
     this.fireauth.authState.subscribe(user => {
       if (user) {
+        this.router.navigate(['/home']);
         console.log('Usuário autenticado:', user);
       } else {
         console.log('Nenhum usuário autenticado');
