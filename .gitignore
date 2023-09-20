@@ -1,0 +1,38 @@
+# Arquivos gerados pelo Angular CLI
+/dist/
+/tmp/
+/node_modules/
+
+# Arquivos gerados pelo Firebase CLI
+/.firebase/
+/firestore.rules
+/firebase.json
+/storage.rules
+
+# Logs e arquivos temporários
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências locais
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
+
+# Arquivos de build do Angular
+/angular.json
+/tsconfig.json
+/tsconfig.app.json
+/tsconfig.spec.json
+/tslint.json
+/.browserslistrc
+/karma.conf.js
+/package.json
+/package-lock.json
+
+# Configuração local do Firebase
+/.firebaserc
+
+# Firebase SDK
+/.firebase/
