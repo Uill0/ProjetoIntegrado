@@ -1,1 +1,0 @@
-{"ast":null,"code":"import '@firebase/auth-compat';","map":{"version":3,"names":[],"sources":["D:/ProjetoIntegrado/node_modules/@angular/fire/node_modules/firebase/compat/auth/dist/esm/index.esm.js"],"sourcesContent":["import '@firebase/auth-compat';\r\n\n"],"mappings":"AAAA,OAAO,uBAAuB"},"metadata":{},"sourceType":"module","externalDependencies":[]}
