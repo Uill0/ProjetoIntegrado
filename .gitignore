@@ -41,3 +41,5 @@ yarn-error.log*
 .angular/cache/16.2.1/angular-webpack/3225f990ce01e94f0cee6ea302bd7df7ba171122/index.pack
 .angular/cache/16.2.1/angular-webpack/5c98e57c11fe1a31b3f0ddb1f4c86b1400accd0e/0.pack
 # Adicione mais linhas para os outr
+
+*.pak
