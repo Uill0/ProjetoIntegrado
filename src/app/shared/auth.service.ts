@@ -49,7 +49,7 @@ export class AuthService {
   }
   
   //metodo de cadastro
-  register(email : string, password : string){
+  register(email : string, password : string, user : string){
     this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
       alert('Cadastro efetuado com sucesso');
       this.router.navigate(['/login']);
