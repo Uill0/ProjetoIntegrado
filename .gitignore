@@ -1,0 +1,31 @@
+# Ignorar arquivos gerados pelo Angular CLI
+/node_modules
+/dist
+/e2e
+/.angular
+
+# Ignorar arquivos de configuração Firebase
+/src/environments/environment.ts
+/src/environments/environment.prod.ts
+
+# Ignorar arquivos de chaves Firebase (substitua com as suas próprias chaves)
+/src/environments/firebase.config.ts
+
+# Ignorar arquivos de configuração do VS Code (opcional)
+.vscode
+
+# Ignorar arquivos de build e caches do sistema
+/.idea
+/.vscode
+.DS_Store
+*.log
+
+# Ignorar dependências do projeto
+npm-debug.log
+yarn-error.log
+
+# Ignorar arquivos de usuário (por exemplo, configurações do editor)
+/.editorconfig
+/.eslintrc
+/.npmrc
+/.prettierrc
