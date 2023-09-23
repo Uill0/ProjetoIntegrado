@@ -43,3 +43,4 @@ yarn-error.log*
 # Adicione mais linhas para os outr
 
 *.pack
+.angular/
