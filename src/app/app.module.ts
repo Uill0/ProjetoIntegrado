@@ -14,7 +14,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { RegisterComponent } from './component/register/register.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
@@ -22,7 +22,13 @@ import { HomeComponent } from './component/home/home.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './component/verify-email/verify-email.component';
 import { RoomsComponent } from './component/rooms/rooms.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -46,6 +52,15 @@ import { RoomsComponent } from './component/rooms/rooms.component';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
+    BrowserAnimationsModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatCardModule,
+    MatDividerModule,
+    MatFormFieldModule,
     
   ],
   providers: [
@@ -54,4 +69,6 @@ import { RoomsComponent } from './component/rooms/rooms.component';
 
   
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
