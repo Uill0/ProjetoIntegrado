@@ -17,6 +17,10 @@ export class ForgotPasswordComponent {
 
   }
 
+  login(){
+    this.router.navigate(['/login'])
+  }
+
   forgotpassword() {
      this.auth.forgotPassword(this.email);
      this.email = '';
