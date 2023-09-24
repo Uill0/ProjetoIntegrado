@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,11 +14,14 @@ export class RegisterComponent implements OnInit{
   confirmPassword : string = '';
   user : string = '';
 
-  constructor(private auth : AuthService) {}
+  constructor(private auth : AuthService, private router : Router) {}
 
   ngOnInit(): void {
 
   }
+  login() {
+    this.router.navigate(['/login']);
+}
 
   register() {
     if(this.email == '') {

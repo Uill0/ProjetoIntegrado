@@ -6,31 +6,32 @@
     <title>Cadastre-se</title>
 </head>
 <body>
-    <h1>Cadastre-se</h1>
-<form> 
-<div class="form-group">
-   
-    <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Seu email" required>
-</div>
-<div class="form-group">
+    <div class="form-container">
+        <form> 
+            <h1 class="title">Cadastre-se</h1>
+
+            <div class="form-group">
+                <input  class="input-box" type="text" id="user" name="user" [(ngModel)]="user" placeholder="Nome de usuário" required>
+            </div>
+
+            <div class="form-group">
+                <input class="input-box" type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email" required>
+            </div>
+
+            <div class="form-group">
+                <input  class="input-box" type="password" id="password" name="password" [(ngModel)]="password" placeholder="Senha" required>
+            </div>
+
+            <div class="form-group">
+                <input  class="input-box" type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirme sua senha" required>
+            </div>
+
+            <button type="submit" (click)="register()">Confirmar</button>
+        </form>
+        <span class="login" (click)="login()">Login</span>
+
+    </div>
     
-    <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Sua senha" required>
-</div>
-
-<div class="form-group">
-    
-    <input type="password" id="password" name="password" [(ngModel)]="confirmPassword" placeholder="Confirme sua senha" required>
-</div>
-
-<div class="form-group">
-    
-    <input type="password" id="user" name="user" [(ngModel)]="user" placeholder="Nome de usuário" required>
-</div>
-
-<button type="submit" (click)="register()">Cadastrar</button>
-<a type="submit" href="login()">Login</a>
-</form>
-
 </body>
 </html>
 
