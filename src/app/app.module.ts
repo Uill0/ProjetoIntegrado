@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/login/login.component';
 
-
 import { environment } from 'src/environments/environment';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -29,6 +28,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { ProfileComponent } from './component/profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatDividerModule } from '@angular/material/divider';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     RoomsComponent,
+    ProfileComponent,
    
   ],
   imports: [
@@ -52,7 +54,6 @@ import { MatDividerModule } from '@angular/material/divider';
     FormsModule,
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    BrowserAnimationsModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,

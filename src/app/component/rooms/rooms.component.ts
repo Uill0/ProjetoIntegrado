@@ -15,7 +15,7 @@ export class RoomsComponent {
 
   title = 'firechat';
   app: FirebaseApp;
-  db: Database;
+  db: Database; 
   form: FormGroup;
   username = '';
   message = '';

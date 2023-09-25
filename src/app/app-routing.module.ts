@@ -8,7 +8,7 @@ import { VerifyEmailComponent } from './component/verify-email/verify-email.comp
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { RoomsComponent } from './component/rooms/rooms.component';
 import { AuthGuard } from './shared/auth.guard';
-
+import { ProfileComponent } from './component/profile/profile.component';
 
 const routes: Routes = [
 
@@ -20,6 +20,8 @@ const routes: Routes = [
  { path: 'forgot-password', component: ForgotPasswordComponent },
  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
  { path: 'rooms', component: RoomsComponent, canActivate: [AuthGuard] },
+ { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+
  
  
  

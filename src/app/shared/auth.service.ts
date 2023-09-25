@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 
-
+import { environment } from 'src/environments/environment';
+import { FirebaseApp, initializeApp } from 'firebase/app';
+import { Database, getDatabase, ref, set, push, onValue  } from "firebase/database";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +13,9 @@ export class AuthService {
   loginSuccess: boolean | undefined;
   angularFireAuth: any;
   
+  app: FirebaseApp;
+  db: Database;
+
   constructor( private fireauth : AngularFireAuth, private router : Router) {
     this.fireauth.authState.subscribe(user => {
       if (user) {
@@ -20,6 +25,9 @@ export class AuthService {
         console.log('Nenhum usuário autenticado');
       }
     });
+
+    this.app = initializeApp(environment.firebase);
+    this.db = getDatabase(this.app);
 
    }  
 
@@ -49,16 +57,27 @@ export class AuthService {
   }
   
   //metodo de cadastro
-  register(email : string, password : string, user : string){
+  register(email : string, password : string, user : string, name : string){
     this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
       alert('Cadastro efetuado com sucesso');
       this.router.navigate(['/login']);
       this.sendEmailVerification(res.user);
+
+      this.saveUser(res.user!.uid, name, user);
     }, err => {
       alert(err.message);
       this.router.navigate(['/register']);
     })
   }
+
+  //metodo para salvar informações
+  saveUser(userId: string, name: string, user: string){
+    set(ref(this.db, 'users/' + userId), {
+      name: name,
+      user: user,
+    });
+  }
+  
 
   // sair
   logout(){

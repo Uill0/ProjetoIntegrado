@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit{
   password : string = '';
   confirmPassword : string = '';
   user : string = '';
+  name : string = '';
 
   constructor(private auth : AuthService, private router : Router) {}
 
@@ -43,12 +44,18 @@ export class RegisterComponent implements OnInit{
       alert('Insira um nome de usuário');
       return;
     }
+
+    if(this.name == '') {
+      alert('Insira seu nome');
+      return;
+    }
   
-    this.auth.register(this.email, this.password, this.user);
+    this.auth.register(this.email, this.password, this.user, this.name);
   
     this.email = '';
     this.password = '';
     this.confirmPassword = '';
     this.user = '';
+    this.name = '';
    }
 }
