@@ -35,5 +35,9 @@ export class ProfileComponent implements OnInit {
   home() {
     this.router.navigate(['/home']);
   }
+
+  logout(){
+    this.router.navigate(['/logout']);
+  }
 }
 // a ideia é usar o id do chat ou do propio perfil para acessar as informações e depois altera-las
