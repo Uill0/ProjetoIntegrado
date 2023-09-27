@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '@angular/fire/auth';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserProfile } from 'src/app/models/profileUser'; 
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Component({
   selector: 'app-profile',
@@ -11,25 +11,30 @@ import { UserProfile } from 'src/app/models/profileUser';
 })
 export class ProfileComponent implements OnInit {
   userData: any;
+  user: any;
+  userId: string | null = null;
 
   constructor(
     private router: Router,
     private formBuilder: FormBuilder,
-    private userProfile: UserProfile 
+    private userProfile: UserProfile,
+    private fireauth: AngularFireAuth
   ) {}
 
   ngOnInit(): void {
-    // alterar para receber o valor do UID ou ID do perfil/chat, não o valor fixo 
-    const userId = '9cxOwvav3QemLGt916s4o6rrl3m1';
-    // const userId = user.uid;
-    this.userProfile.getUserData(userId)
-      .then((userData: any) => {
-        console.log('Dados do usuário:', userData);
-        this.userData = userData;
-      })
-      .catch((error) => {
-        console.error('Erro ao buscar dados do usuário:', error);
-      });
+    this.fireauth.authState.subscribe((user) => {
+      if (user) {
+        this.userId = user.uid; // Obtém o UID do usuário atual
+        this.userProfile.getUserData(this.userId)
+          .then((userData: any) => {
+            console.log('Dados do usuário:', userData);
+            this.userData = userData;
+          })
+          .catch((error) => {
+            console.error('Erro ao buscar dados do usuário:', error);
+          });
+      }
+    });
   }
 
   home() {
@@ -37,7 +42,6 @@ export class ProfileComponent implements OnInit {
   }
 
   logout(){
-    this.router.navigate(['/logout']);
+    this.router.navigate(['/login']);
   }
 }
-// a ideia é usar o id do chat ou do propio perfil para acessar as informações e depois altera-las
