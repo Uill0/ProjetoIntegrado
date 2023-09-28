@@ -1,13 +1,13 @@
 <p>profile works!</p>
 
 <button (click)="home()">home</button>
-
-<!-- profile.component.html -->
+<button (click)="logout()">Logout</button>
 <div>
     <h1>Perfil do Usuário</h1>
     <p>Nome do Usuário: {{ userData?.name }}</p>
+    <p>Nick Name: {{ userData?.user }}</p>
     <!-- Use o operador ? para evitar erros caso userData seja nulo ou indefinido -->
   </div>
 
-  <button (click)="logout()">Logout</button>
+  
   

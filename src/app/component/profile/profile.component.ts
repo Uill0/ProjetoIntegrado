@@ -32,9 +32,10 @@ export class ProfileComponent implements OnInit {
           })
           .catch((error) => {
             console.error('Erro ao buscar dados do usuário:', error);
-          });
+          })
       }
     });
+  
   }
 
   home() {
