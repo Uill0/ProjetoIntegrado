@@ -30,6 +30,16 @@
                 <input  class="input-box" type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirme sua senha" required>
             </div>
 
+            <div class="form-group">
+                <label for="simOuNao">Criar conta como: </label>
+                <select id="userTypeSelect" [(ngModel)]="UserType" name="userType">
+                    <option value="Aluno">Aluno</option>
+                    <option value="Ministrante">Ministrante</option>
+                    <option value="Admin">Admin</option>
+                  </select>
+                  
+            </div>
+
             <button type="submit" (click)="register()">Confirmar</button>
         </form>
         <span class="login" (click)="login()">Login</span>

@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { Database, getDatabase, ref, set, push, onValue  } from "firebase/database";
 
+import { RegisterComponent } from '../component/register/register.component';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -57,13 +59,13 @@ export class AuthService {
   }
   
   //metodo de cadastro
-  register(email : string, password : string, user : string, name : string){
+  register(email : string, password : string, user : string, name : string, userType : string){
     this.fireauth.createUserWithEmailAndPassword(email, password).then( res => {
       alert('Cadastro efetuado com sucesso');
       this.router.navigate(['/login']);
       this.sendEmailVerification(res.user);
 
-      this.saveUser(res.user!.uid, name, user);
+      this.saveUser(res.user!.uid, name, user, userType);
     }, err => {
       alert(err.message);
       this.router.navigate(['/register']);
@@ -71,10 +73,11 @@ export class AuthService {
   }
 
   //metodo para salvar informações
-  saveUser(userId: string, name: string, user: string){
+  saveUser(userId: string, name: string, user: string, userType: string){
     set(ref(this.db, 'users/' + userId), {
       name: name,
       user: user,
+      userType: userType, 
     });
   }
   

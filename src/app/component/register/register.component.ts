@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/auth.service';
 import { Router } from '@angular/router';
+import { User } from 'firebase/auth';
+import { FormsModule } from '@angular/forms';
+
+enum UserType {
+  Aluno = 'Aluno',
+  Ministrante = 'Ministrante',
+  Admin = 'Admin',
+}
 
 @Component({
   selector: 'app-register',
@@ -14,6 +22,7 @@ export class RegisterComponent implements OnInit{
   confirmPassword : string = '';
   user : string = '';
   name : string = '';
+  UserType : UserType = UserType.Aluno;
 
   constructor(private auth : AuthService, private router : Router) {}
 
@@ -50,12 +59,14 @@ export class RegisterComponent implements OnInit{
       return;
     }
   
-    this.auth.register(this.email, this.password, this.user, this.name);
+    this.auth.register(this.email, this.password, this.user, this.name, this.UserType);
   
     this.email = '';
     this.password = '';
     this.confirmPassword = '';
     this.user = '';
     this.name = '';
+    this.UserType = UserType.Aluno;
+
    }
 }

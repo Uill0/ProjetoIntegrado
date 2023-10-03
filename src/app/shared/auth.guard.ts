@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
           if (user.emailVerified) {
             resolve(true); // O usuário está autenticado e verificado, permitir acesso a todas as rotas
           } else {
-            this.router.navigate(['/verify-email']);
+          //  this.router.navigate(['/verify-email']);
             resolve(false); // O usuário está autenticado, mas não verificado, não permitir acesso
           }
         } else {
