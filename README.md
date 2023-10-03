@@ -12,6 +12,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Execute ng build para compilar o projeto. Os artefatos da compilação serão armazenados no diretório dist/.
-Para instalar as dependencias para teste npm install / npm install -g @angular/cli / ng add @angular/fire / ng add @angular/material
+Execute ng build para compilar o projeto.
+Os artefatos da compilação serão armazenados no diretório dist/.
+Para instalar as dependencias para teste npm install
+npm install -g @angular/cli
+ng add @angular/fire
+ng add @angular/material
 
