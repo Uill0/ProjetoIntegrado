@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 import { FormsModule } from '@angular/forms';
 
-enum UserType {
+export enum UserType {
   Aluno = 'Aluno',
   Ministrante = 'Ministrante',
   Admin = 'Admin',
@@ -22,13 +22,14 @@ export class RegisterComponent implements OnInit{
   confirmPassword : string = '';
   user : string = '';
   name : string = '';
-  UserType : UserType = UserType.Aluno;
+  userType : UserType = UserType.Aluno;
 
   constructor(private auth : AuthService, private router : Router) {}
 
   ngOnInit(): void {
-
+    
   }
+
   login() {
     this.router.navigate(['/login']);
 }
@@ -58,15 +59,17 @@ export class RegisterComponent implements OnInit{
       alert('Insira seu nome');
       return;
     }
-  
-    this.auth.register(this.email, this.password, this.user, this.name, this.UserType);
+    
+    
+
+    this.auth.register(this.email, this.password, this.user, this.name, this.userType);
   
     this.email = '';
     this.password = '';
     this.confirmPassword = '';
     this.user = '';
     this.name = '';
-    this.UserType = UserType.Aluno;
+   
 
    }
 }

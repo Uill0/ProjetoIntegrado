@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { Database, getDatabase, ref, set, push, onValue  } from "firebase/database";
-
-import { RegisterComponent } from '../component/register/register.component';
+import { UserType } from '../component/register/register.component';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +16,7 @@ export class AuthService {
   
   app: FirebaseApp;
   db: Database;
-
+ 
   constructor( private fireauth : AngularFireAuth, private router : Router) {
     this.fireauth.authState.subscribe(user => {
       if (user) {
@@ -39,10 +38,8 @@ export class AuthService {
 
   // metodo de login
   login(email: string, password: string) {
- //  this.fireauth.setPersistence('local').then(() => { 
     this.fireauth.signInWithEmailAndPassword(email, password).then((res) => {
       localStorage.setItem('token', 'true');
-
       if (res.user?.emailVerified == true) {
         this.loginSuccess = true; // Login bem-sucedido
         this.router.navigate(['/home']);
@@ -55,7 +52,6 @@ export class AuthService {
       alert('Algo está errado');
       this.router.navigate(['/login']);
     });
- // });
   }
   
   //metodo de cadastro
