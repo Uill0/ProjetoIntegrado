@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { environment } from 'src/environments/environment';
 import { FirebaseApp, initializeApp } from 'firebase/app';
-import { Database, getDatabase, ref, set, push, onValue  } from "firebase/database";
+import { Database, getDatabase, ref, set, push, onValue  } from 'firebase/database';
 import { UserType } from '../component/register/register.component';
 
 @Injectable({
@@ -31,7 +31,7 @@ export class AuthService {
     this.db = getDatabase(this.app);
 
    }  
-
+//constando se o usuario está logado
   isLoggedIn(): boolean {
     return !!this.fireauth.currentUser;
   }
