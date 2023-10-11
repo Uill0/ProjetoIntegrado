@@ -24,7 +24,7 @@
     "@types/angularfire": "^0.8.35",
     "@types/firebase": "^3.2.1",
     "@types/uuid": "^9.0.4",
-    "firebase": "^10.3.1",
+    "firebase": "^10.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "uuid": "^9.0.1",
