@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 import { environment } from 'src/environments/environment';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { Database, getDatabase, ref, set } from 'firebase/database';
 import { v4 as uuidv4 } from 'uuid';
+import { RoomProfile } from '../models/profileRoom';
+
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +18,7 @@ export class RoomService {
 
     app: FirebaseApp;
     db: Database;
+    room: any;
 
     constructor( private fireauth : AngularFireAuth, private router : Router){
 
@@ -22,20 +26,20 @@ export class RoomService {
         this.db = getDatabase(this.app);
     }
 
-    createChatRoom(roomName: string) {
-        const newRoomId = uuidv4();
+    createRoom(roomName: string) {
+        const RoomId = uuidv4();
         const newRoom = {
-            id: newRoomId,
+            id: RoomId,
             name: roomName,
             users: []
         };
 
-     //   this.db.object(`/chatRooms/${newRoomId}`).set(newRoom);
-        set(ref(this.db, 'rooms/' + newRoomId), {
+        set(ref(this.db, 'rooms/' + RoomId), {
             roomName: roomName
         })
 
-        return newRoomId;
+        return RoomId;
     }
+    
     
 }

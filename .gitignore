@@ -29,3 +29,5 @@ yarn-error.log
 /.eslintrc
 /.npmrc
 /.prettierrc
+node_modules
+
