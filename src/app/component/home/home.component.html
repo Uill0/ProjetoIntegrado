@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início</title>
+    
 </head>
 <body>
-    <nav class="menu">
-        <ul>
-            <button type="button" (click)="profile()">Perfil</button>
-            <button type="button" [routerLink]="['/rooms']">Salas</button>
-            <button *ngIf="userType === 'Admin' || userType === 'Ministrante'"  type="button" [routerLink]="['/dashboard']">dashboard</button>
-
-        </ul>
-    </nav>
+ 
+    <nav class="menu-nav">
+        
+          <li><button href="home.html">Home</button></li>
+          <li><button href="Perfil.html">Perfil</button></li>
+          <li><button href="Loja.html">Loja</button></li>
+          <li><button href="CtEvens.html">Eventos</button></li>
+          <li><button href="forum.html">Fórum</button></li>
+          <li><button (click)="logout()">Sair</button></li>
+          
+      </nav>
+      
+    <div class="menu">
+            <button type="button" id="perfil" (click)="profile()"></button>
+            <button type="button" id="salas" [routerLink]="['/rooms']"></button>
+         <!--   <button *ngIf="userType === 'Admin' || userType === 'Ministrante'"  type="button" [routerLink]="['/dashboard']">dashboard</button>-->
+    </div>
 </body>
 </html>

@@ -1,0 +1,83 @@
+html, body {
+  background-image: url('./fundo.png');
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+  
+  .menu-nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .menu-nav a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .rectangles {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  input[type="button"] {
+    width: 200px;
+    height: 300px;
+    margin: 10px;
+    font-size: 18px;
+  }
+
+  #perfil {
+    background-color: transparent;
+    border: none;
+    
+    position: relative;
+    top: 25px;
+    left: 340px;
+    width: 180px;
+    height: 400px;
+  }
+
+  #perfil:hover {
+    cursor: pointer;
+  }
+
+  #salas {
+    background-color: transparent;
+    border: none;
+
+    position: relative;
+    top: 450px;
+    left: 1100px;
+    width: 400px;
+    height: 250px;
+  }
+
+  #salas:hover {
+    cursor: pointer;
+  }
