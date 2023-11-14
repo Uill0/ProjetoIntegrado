@@ -1,97 +1,12 @@
-  <!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-</head>
-
-  <body>
     <p>profile works!</p>
 <div id="perfil"> 
  <!-- <button (click)="home()">home</button> -->
- <!-- <button (click)="logout()">Logout</button> -->
-  <div>
+  <button (click)="logout()">Logout</button>
       <h1>Perfil de: {{ userData?.userType }}</h1>
       <p>Nome do Usuário: {{ userData?.name }}</p>
       <p>Nick Name: {{ userData?.user }}</p>
       <!-- Use o operador ? para evitar erros caso userData seja nulo ou indefinido -->
-    </div>
-    </div>
-
-    <div class="menu">
-      <button (click)="home()" id="return-button">Retornar</button>
-
-      <ul>
-        <li id="editar-perfil">Editar Perfil</li>
-        <li id="minhas-conquistas">Minhas Conquistas</li>
-        <li id="personalizar">Personalizar</li>
-        <li id="certificados">Certificados</li>
-      </ul>
-    </div>
-
-    <div class="content">
-      
-      <div id="editar-perfil" class="area">
-        <div class="profile">
-          <div class="profile-info">
-            <img src="avatar.jpg" alt="Foto de Perfil">
-            <h1>Nome do Usuário</h1>
-            <p>Email: usuario@email.com</p>
-          </div>
-
-          <div class="edit-profile">
-            <h2>Editar Perfil</h2>
-            <form>
-              <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" value="Nome do Usuário">
-
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" value="usuario@email.com">
-
-              <label for="senha">Nova Senha:</label>
-              <input type="password" id="senha" name="senha">
-
-              <input type="submit" value="Salvar">
-            </form>
-          </div>
-        </div>
-      </div>
-      
-      <div id="minhas-conquistas" class="area">
-        <h1>Minhas Conquistas</h1>
-        <p>Minhas Conquistas</p>
-      </div>
-      
-      <div id="personalizar" class="area">
-        <h1>Personalizar</h1>
-        <p>Personalizar</p>
-      </div>
-      
-      <div id="certificados" class="area">
-        <h1>Certificados</h1>
-        <p>Certificados</p>
-      </div>
-      
-    </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const menuItems = document.querySelectorAll('.menu li');
-        const contentAreas = document.querySelectorAll('.area');
 
 
-        menuItems.forEach((item, index) => {
-          item.addEventListener('click', () => {
-            contentAreas.forEach((area, i) => {
-              area.style.display = i === index ? 'block' : 'none';
-            });
-          });
-        });
-      });
-    </script>
-
-  </body>
 
