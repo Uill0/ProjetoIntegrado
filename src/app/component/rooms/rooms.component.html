@@ -25,3 +25,15 @@
                         </button>
       </mat-form-field>
   </form>
+
+  <div>
+    <mat-form-field appearance="outline" class="fw">
+      <mat-label>YouTube Video URL</mat-label>
+      <input matInput [(ngModel)]="youtubeVideoUrl" placeholder="Enter YouTube video URL">
+    </mat-form-field>
+    <button mat-raised-button (click)="showYoutubeVideo = true">Show Video</button>
+  </div>
+  
+  <div *ngIf="showYoutubeVideo">
+    <iframe width="560" height="315" [src]="getEmbedUrl()" frameborder="0" allowfullscreen></iframe>
+  </div>

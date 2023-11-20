@@ -3,4 +3,7 @@ export interface Chat {
     username: string;
     message: string;
     timestamp: Date; 
+
+    videoId?: string;
+
   }
