@@ -68,7 +68,7 @@ export class AuthService {
     })
   }
 
-  //metodo para salvar informações
+  //metodo para recuperar informações
   saveUser(userId: string, name: string, user: string, userType: string){
     set(ref(this.db, 'users/' + userId), {
       name: name,

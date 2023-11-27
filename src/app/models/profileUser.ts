@@ -8,7 +8,7 @@ import { FirebaseApp, initializeApp } from 'firebase/app';
 @Injectable({
   providedIn: 'root'
 })
-export class UserProfile {
+export class UserProfile { 
 
   app: FirebaseApp;
   db: Database;

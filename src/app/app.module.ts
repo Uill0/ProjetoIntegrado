@@ -30,7 +30,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ListRoomsComponent } from './component/list-rooms/list-rooms.component';
-
+import { RoomProfile } from './models/profileRoom';
 
 @NgModule({
   declarations: [

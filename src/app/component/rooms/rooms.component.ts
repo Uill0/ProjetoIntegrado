@@ -6,6 +6,7 @@ import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Valida
 import { v4 as uuidv4 } from 'uuid';
 import { Chat } from 'src/app/shared/chat';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { RoomProfile } from 'src/app/models/profileRoom';
 
 @Component({
   selector: 'app-rooms',
@@ -24,12 +25,22 @@ export class RoomsComponent {
   youtubeVideoUrl = '';
   showYoutubeVideo = false;
 
-  constructor(private formBuilder: FormBuilder, private sanitizer: DomSanitizer) {
+  roomData: any;
+  room: any;
+  roomId: string | null = null;
+
+  constructor(
+    private formBuilder: FormBuilder, 
+    private sanitizer: DomSanitizer) {
+
     this.app = initializeApp(environment.firebase);
     this.db = getDatabase(this.app);
     this.form = this.formBuilder.group({
       'message': [],
-      'username': []
+      'username': [],
+    });
+    this.form = this.formBuilder.group({
+      'url': []
     });
   }
 
@@ -54,6 +65,7 @@ export class RoomsComponent {
         }
       }
     });
+
   }
 
   getEmbedUrl(): SafeResourceUrl {

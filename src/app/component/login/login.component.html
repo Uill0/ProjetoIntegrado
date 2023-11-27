@@ -8,24 +8,24 @@
 <body>
     <div class="form-container-login">
         <form> 
-            <h1 class="title">Bem-vindo</h1>
-
+            <h1 class="title">Login</h1>
+            <h3 class="sub-title">Email:</h3>
             <div class="form-group">
                 <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Seu email" required>
 
             </div>
-
+            <h3 class="sub-title">Senha:</h3>
             <div class="form-group">
                 <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Sua senha" required>
 
             </div>
-
+            <p><span class="forgot-password" (click)="forgotpassword()">Esqueci a senha</span></p>
             <button type="submit" (click)="login()">Entrar</button>
+            <p class="register-name" >Não tem uma conta? <span class="register-name" (click)="register()">Cadastre-se</span></p>
         </form>
-
-        <p class="register-name" >Não tem uma conta? <span class="register-name" (click)="register()">Cadastre-se</span></p>
-
-        <p><span class="forgot-password" (click)="forgotpassword()">Esqueci a senha.</span></p>
     </div>
+    <div class="form-container-img">
+        <img class="imagem-garota" src="assets/images/garota.png" alt="">
+         </div>
 </body>
 </html>
