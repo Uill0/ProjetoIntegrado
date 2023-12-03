@@ -9,6 +9,8 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
 import { RoomsComponent } from './component/rooms/rooms.component';
 import { AuthGuard } from './shared/auth.guard';
 import { ProfileComponent } from './component/profile/profile.component';
+import { ListRoomsComponent } from './component/list-rooms/list-rooms.component';
+import { CreateQuestionComponent } from './component/create-question/create-question.component';
 
 const routes: Routes = [
 
@@ -21,8 +23,8 @@ const routes: Routes = [
  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
  { path: 'rooms', component: RoomsComponent, canActivate: [AuthGuard] },
  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
-
- 
+ { path: 'listRooms', component: ListRoomsComponent, canActivate: [AuthGuard]},
+ { path: 'create-question', component: CreateQuestionComponent, canActivate: [AuthGuard]},
  
  
 ];

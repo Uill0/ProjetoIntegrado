@@ -1,0 +1,20 @@
+<h2>Criar Pergunta</h2>
+<form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="question">Pergunta:</label>
+    <input type="text" id="question" formControlName="question" />
+  </div>
+  <div>
+    <label for="option1">Opção 1:</label>
+    <input type="text" id="option1" formControlName="option1" />
+  </div>
+  <div>
+    <label for="option2">Opção 2:</label>
+    <input type="text" id="option2" formControlName="option2" />
+  </div>
+  <div>
+    <label for="option3">Opção 3:</label>
+    <input type="text" id="option3" formControlName="option3" />
+  </div>
+  <button type="submit">Criar Pergunta</button>
+</form>

@@ -10,8 +10,8 @@
     <nav class="menu">
         <ul>
             <button type="button" (click)="profile()">Perfil</button>
-            <button type="button" [routerLink]="['/rooms']">Salas</button>
             <button *ngIf="userType === 'Admin' || userType === 'Ministrante'"  type="button" [routerLink]="['/dashboard']">dashboard</button>
+            <button type="button" (click)="listRooms()">Lista de Salas</button>
 
         </ul>
     </nav>

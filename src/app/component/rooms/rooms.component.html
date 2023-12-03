@@ -1,39 +1,43 @@
-<div id="history">
-    <div *ngFor="let chat of chats" class="mb">
-      <mat-card>
-        <mat-card-subtitle>
-          <span>{{chat.username}} (Sent: {{chat.timestamp | date:'long'}})</span>
-        </mat-card-subtitle>
-        <mat-card-content>
-          <p>{{chat.message}}</p>
-        </mat-card-content>
-      </mat-card>
-    </div>
+<div id="history" #chatBox>
+  <!-- Seção de histórico de mensagens -->
+  <div *ngFor="let chat of chats" class="mb">
+    <mat-card>
+      <mat-card-subtitle>
+        <span *ngIf="chat.userId === userId">Você</span>
+        <span *ngIf="chat.userId !== userId">{{ chat.username }}   {{ chat.timestamp | date:'HH:mm:ss' }}</span>
+      </mat-card-subtitle>
+      <mat-card-content>
+        <p>{{ chat.message }}</p>
+      </mat-card-content>
+    </mat-card>
   </div>
-  <form id="message" [formGroup]="form" (ngSubmit)="onChatSubmit(form.value)">
-    <mat-form-field appearance="outline" class="fw">
-      <mat-label>Username</mat-label>
-      <input matInput
-                      formControlName="username" >
-    </mat-form-field>
-      <mat-form-field appearance="outline" class="fw"> 
-      <mat-label>Enter Chat</mat-label>
-        <input matInput
-                        formControlName="message" >
-                        <button type="submit" matSuffix mat-icon-button aria-label="Submit">
-                          <mat-icon>send</mat-icon>
-                        </button>
-      </mat-form-field>
-    </form>
+</div>
 
-  <div>
-    <mat-form-field appearance="outline" class="fw">
-      <mat-label>YouTube Video URL</mat-label>
-      <input matInput [(ngModel)]="youtubeVideoUrl" placeholder="Enter YouTube video URL">
-    </mat-form-field>
-    <button mat-raised-button (click)="showYoutubeVideo = true">Show Video</button>
-  </div>
+<!-- Formulário para enviar mensagens -->
+<form id="message" [formGroup]="form" (ngSubmit)="onChatSubmit(form.value)">
+  <mat-form-field appearance="outline" class="fw">
+    <mat-label>Enter Chat</mat-label>
+    <input matInput formControlName="message">
+    <button type="submit" matSuffix mat-icon-button aria-label="Submit">
+      <mat-icon>send</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+
+<!-- Seção para exibir o link da transmissão -->
+<div>
+  <mat-form-field appearance="outline" class="fw">
+    <mat-label>Link da transmissão</mat-label>
+    <input matInput [(ngModel)]="youtubeVideoUrl" placeholder="Link da transmissão">
+  </mat-form-field>
+  <button mat-raised-button (click)="onVideoSubmit()">Setar vídeo</button>
   
-  <div *ngIf="showYoutubeVideo">
-    <iframe width="560" height="315" [src]="getEmbedUrl()" frameborder="0" allowfullscreen></iframe>
-  </div>
+</div>
+
+<!-- Seção para exibir o vídeo -->
+<div *ngIf="youtubeVideoUrl && showYoutubeVideo">
+  <iframe width="560" height="315" [src]="getEmbedUrl()" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- Botão para criar pergunta -->
+<button mat-raised-button (click)="openCreateQuestionForm()">Criar Pergunta</button>

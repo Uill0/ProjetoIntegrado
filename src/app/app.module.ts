@@ -31,6 +31,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ListRoomsComponent } from './component/list-rooms/list-rooms.component';
 import { RoomProfile } from './models/profileRoom';
+import { CreateQuestionComponent } from './component/create-question/create-question.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { RoomProfile } from './models/profileRoom';
     RoomsComponent,
     ProfileComponent,
     ListRoomsComponent,
+    CreateQuestionComponent,
    
   ],
   imports: [

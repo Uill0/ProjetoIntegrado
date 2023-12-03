@@ -27,7 +27,7 @@ export class ProfileComponent implements OnInit {
         this.userId = user.uid; // Obtém o UID do usuário atual
         this.userProfile.getUserData(this.userId)
           .then((userData: any) => {
-            console.log('Dados do usuário:', userData);
+            console.log('Dados do usuário:', userData); 
             this.userData = userData;
           })
           .catch((error) => {

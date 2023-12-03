@@ -57,4 +57,8 @@ export class HomeComponent {
   dashboard(){
     this.router.navigate(['/dashboard'])
   }
+
+  listRooms(){
+    this.router.navigate(['/listRooms'])
+  }
 }
