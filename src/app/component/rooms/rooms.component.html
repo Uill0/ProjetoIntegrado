@@ -1,5 +1,5 @@
 <div id="history" #chatBox>
-  <!-- Seção de histórico de mensagens -->
+
   <div *ngFor="let chat of chats" class="mb">
     <mat-card>
       <mat-card-subtitle>
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<!-- Formulário para enviar mensagens -->
+
 <form id="message" [formGroup]="form" (ngSubmit)="onChatSubmit(form.value)">
   <mat-form-field appearance="outline" class="fw">
     <mat-label>Enter Chat</mat-label>
@@ -24,7 +24,7 @@
   </mat-form-field>
 </form>
 
-<!-- Seção para exibir o link da transmissão -->
+
 <div>
   <mat-form-field appearance="outline" class="fw">
     <mat-label>Link da transmissão</mat-label>
@@ -34,10 +34,9 @@
   
 </div>
 
-<!-- Seção para exibir o vídeo -->
+
 <div *ngIf="youtubeVideoUrl && showYoutubeVideo">
   <iframe width="560" height="315" [src]="getEmbedUrl()" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<!-- Botão para criar pergunta -->
 <button mat-raised-button (click)="openCreateQuestionForm()">Criar Pergunta</button>
