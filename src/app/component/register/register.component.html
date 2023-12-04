@@ -9,29 +9,29 @@
     <div class="form-container">
         <form> 
             <h1 class="title">Cadastre-se</h1>
-
+            <h3 class="sub-title">Nome de usuário:</h3>
             <div class="form-group">
-                <input  class="input-box" type="text" id="user" name="user" [(ngModel)]="user" placeholder="Nome de usuário" required>
+                <input  class="input-box" type="text" id="user" name="user" [(ngModel)]="user" placeholder="Ablublubleble" required>
+            </div>
+            <h3 class="sub-title">Seu nome:</h3>
+            <div class="form-group">
+                <input  class="input-box" type="text" id="name" name="name" [(ngModel)]="name" placeholder="Seu nome e sobrenome" required>
+            </div>
+            <h3 class="sub-title">Email:</h3>
+            <div class="form-group">
+                <input class="input-box" type="email" id="email" name="email" [(ngModel)]="email" placeholder="seunome.sobrenome@gmail.com" required>
+            </div>
+            <h3 class="sub-title">Senha:</h3>
+            <div class="form-group">
+                <input  class="input-box" type="password" id="password" name="password" [(ngModel)]="password" placeholder="Senha com seis digitos" required>
+            </div>
+            <h3 class="sub-title">Confirmar senha:</h3>
+            <div class="form-group">
+                <input  class="input-box" type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Senha com seis digitos iguais" required>
             </div>
 
             <div class="form-group">
-                <input  class="input-box" type="text" id="name" name="name" [(ngModel)]="name" placeholder="Seu nome" required>
-            </div>
-
-            <div class="form-group">
-                <input class="input-box" type="email" id="email" name="email" [(ngModel)]="email" placeholder="Email" required>
-            </div>
-
-            <div class="form-group">
-                <input  class="input-box" type="password" id="password" name="password" [(ngModel)]="password" placeholder="Senha" required>
-            </div>
-
-            <div class="form-group">
-                <input  class="input-box" type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword" placeholder="Confirme sua senha" required>
-            </div>
-
-            <div class="form-group">
-                <label for="simOuNao">Criar conta como: </label>
+                <label for="simOuNao">Criar conta como:</label>
                 <select id="userTypeSelect" [(ngModel)]="userType" name="userType">
                     <option value="Aluno">Aluno</option>
                     <option value="Ministrante">Ministrante</option>
