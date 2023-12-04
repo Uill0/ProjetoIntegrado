@@ -12,6 +12,7 @@
             <button type="button" (click)="profile()">Perfil</button>
             <button *ngIf="userType === 'Admin' || userType === 'Ministrante'"  type="button" [routerLink]="['/dashboard']">dashboard</button>
             <button type="button" (click)="listRooms()">Lista de Salas</button>
+            <button type="button" (click)="store()">Loja de itens</button>
 
         </ul>
     </nav>

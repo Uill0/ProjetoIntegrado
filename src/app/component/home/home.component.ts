@@ -55,10 +55,14 @@ export class HomeComponent {
   }
 
   dashboard(){
-    this.router.navigate(['/dashboard'])
+    this.router.navigate(['/dashboard']);
   }
 
   listRooms(){
-    this.router.navigate(['/listRooms'])
+    this.router.navigate(['/listRooms']);
+  }
+  
+  store(){
+    this.router.navigate(['/store']);
   }
 }

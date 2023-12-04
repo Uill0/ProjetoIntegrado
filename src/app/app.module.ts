@@ -32,6 +32,7 @@ import { ProfileComponent } from './component/profile/profile.component';
 import { ListRoomsComponent } from './component/list-rooms/list-rooms.component';
 import { RoomProfile } from './models/profileRoom';
 import { CreateQuestionComponent } from './component/create-question/create-question.component';
+import { StoreComponent } from './component/store/store.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CreateQuestionComponent } from './component/create-question/create-ques
     ProfileComponent,
     ListRoomsComponent,
     CreateQuestionComponent,
+    StoreComponent,
    
   ],
   imports: [

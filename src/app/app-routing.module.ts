@@ -11,6 +11,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { ProfileComponent } from './component/profile/profile.component';
 import { ListRoomsComponent } from './component/list-rooms/list-rooms.component';
 import { CreateQuestionComponent } from './component/create-question/create-question.component';
+import { StoreComponent } from './component/store/store.component';
 
 const routes: Routes = [
 
@@ -25,6 +26,7 @@ const routes: Routes = [
  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
  { path: 'listRooms', component: ListRoomsComponent, canActivate: [AuthGuard]},
  { path: 'create-question', component: CreateQuestionComponent, canActivate: [AuthGuard]},
+ { path: 'store', component: StoreComponent, canActivate: [AuthGuard]},
  
  
 ];
