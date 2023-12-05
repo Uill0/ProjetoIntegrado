@@ -1,5 +1,5 @@
 body {
-
+    background-color: #334456;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -12,3 +12,9 @@ body {
         .fil3 {fill:#EBEAF2}
         .fil6 {fill:#FCEFC5}
         .fil4 {fill:#FFD300}
+
+        .predio {
+            width: 100%;
+            height: 100%; 
+            margin: 0 auto;
+        }

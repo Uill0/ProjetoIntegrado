@@ -1,25 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Salas</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Centro de Eventos</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter&display=swap" />
 </head>
 <body>
-    <h1>Lista de Salas</h1>
+  <nav id="navbar">
     <ul>
-        <li>
-            <h2 [routerLink]="['/rooms']">Sala 1</h2>
-            <p>Capacidade: 20 pessoas</p>
-        </li>
-        <li>
-            <h2>Sala 2</h2>
-            <p>Capacidade: 15 pessoas</p>
-        </li>
-        <li>
-            <h2>Sala 3</h2>
-            <p>Capacidade: 25 pessoas</p>
-        </li>
+      <li>
+        <svg
+          id="return"
+          xmlns="http://www.w3.org/2000/svg"
+          width="85"
+          height="45"
+          viewBox="0 0 85 45"
+          fill="none"
+        >
+          <path
+            d="M72.2273 1H12.1126C5.97532 1 1 6.83243 1 14.0271V30.3897C1 37.5844 5.97532 43.4168 12.1126 43.4168H72.2273C78.3645 43.4168 83.3393 37.5844 83.3393 30.3897V14.0271C83.3393 6.83243 78.3645 1 72.2273 1Z"
+            fill="#FCC700"
+            stroke="#334456"
+            stroke-width="1.57433"
+            stroke-miterlimit="22.9256"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M28.7354 22.2085L38.6284 16.4951L48.522 10.7842V18.4965L42.0951 22.2085L48.522 25.9202V33.6328L38.6284 27.9216L28.7354 22.2085Z"
+            fill="#334456"
+            stroke="#334456"
+            stroke-width="1.57433"
+            stroke-miterlimit="22.9256"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M42.0957 22.2085L48.8506 18.3078L55.6061 14.4082V22.2085V30.0087L48.8506 26.1091L42.0957 22.2085Z"
+            fill="#334456"
+            stroke="#FCC700"
+            stroke-width="1.57433"
+            stroke-miterlimit="22.9256"
+          />
+        </svg>
+      </li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#index.html">Centro de Eventos</a></li>
+      <li><a href="#loja.html">Loja</a></li>
+      <li><a href="#">Fórum</a></li>
+      <li id="nomeusu"><a href="#"> Nome do Usuário</a></li>
     </ul>
+  </nav>
+  <div class="numeros"></div>
+
+  <div class="portas-container">
+    <div class="portas" id="sala1">
+      <div class="janelas"><div [routerLink]="['/rooms']" class="texto">Sala 1</div></div>
+      <p>20/30</p>
+    </div>
+
+    <div class="portas" id="sala2">
+      <a href="#salaa.html">
+        <div class="janelas"><div class="texto">Sala 2</div></div>
+      </a>
+      <p>25/30</p>
+    </div>
+
+    <div class="portas" id="sala3">
+      <div class="janelas"><div class="texto">Sala 3</div></div>
+      <p>0/30</p>
+    </div>
+  </div>
 </body>
-</html>

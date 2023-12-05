@@ -10,13 +10,16 @@
     <nav class="menu">
         <ul>
             <button type="button" (click)="profile()">Perfil</button>
-            <button *ngIf="userType === 'Admin' || userType === 'Ministrante'"  type="button" [routerLink]="['/dashboard']">dashboard</button>
+          <!--  <button *ngIf="userType === 'Admin' || userType === 'Ministrante'"  type="button" [routerLink]="['/dashboard']">dashboard</button>-->
             <button type="button" (click)="listRooms()">Lista de Salas</button>
             <button type="button" (click)="store()">loja de itens</button>
         </ul>
     </nav>
     <!-- predios clicaveis -->
-    <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="130.048mm" height="97.536mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 6407 4805.25" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+    <div class="predio">
+        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve"
+    version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+    viewBox="0 0 6407 1805.25" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
         <g id="Camada_x0020_1">
             <metadata id="CorelCorpID_0Corel-Layer"/>
             <g id="_1647712446432">
@@ -185,6 +188,7 @@
            </g>
          
     </svg>
+</div>
 </body>
 
 </html>
