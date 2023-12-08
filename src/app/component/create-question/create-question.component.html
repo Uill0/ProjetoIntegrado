@@ -1,20 +1,43 @@
-<h2>Criar Pergunta</h2>
+<div *ngFor="let question of questionService.getQuestions() | async" class="question-container">
+  <h3>A pergunta é:{{ question.question }}</h3>
+  <ul>
+    <li>a {{ question.option1 }}</li>
+    <li>b {{ question.option2 }}</li>
+    <li>c {{ question.option3 }}</li>
+  </ul>
+  <button (click)="editQuestion(question)">Editar</button>
+
+  <div *ngIf="editingQuestion && editingQuestion.id === question.id" class="edit-container">
+    <input [(ngModel)]="editingQuestion.question" placeholder="Nova pergunta"><p></p>
+    <input [(ngModel)]="editingQuestion.option1" placeholder="Nova opção 1"><p></p>
+    <input [(ngModel)]="editingQuestion.option2" placeholder="Nova opção 2"><p></p>
+    <input [(ngModel)]="editingQuestion.option3" placeholder="Nova opção 3"><p></p>
+    <button (click)="saveQuestionEdit()">Salvar</button>
+    <button (click)="cancelQuestionEdit()">Cancelar</button>
+  </div>
+</div>
+
 <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label for="question">Pergunta:</label>
-    <input type="text" id="question" formControlName="question" />
-  </div>
-  <div>
-    <label for="option1">Opção 1:</label>
-    <input type="text" id="option1" formControlName="option1" />
-  </div>
-  <div>
-    <label for="option2">Opção 2:</label>
-    <input type="text" id="option2" formControlName="option2" />
-  </div>
-  <div>
-    <label for="option3">Opção 3:</label>
-    <input type="text" id="option3" formControlName="option3" />
-  </div>
-  <button type="submit">Criar Pergunta</button>
+  <label for="question">Pergunta:</label>
+  <input type="text" id="question" formControlName="question"><p></p>
+
+  <label for="option1">Opção A:</label>
+  <input type="text" id="option1" formControlName="option1">
+  <input type="checkbox" id="correctOption1" formControlName="correctOption" value="option1">
+  <label for="correctOption1">Correta</label><p></p>
+
+  <label for="option2">Opção B:</label>
+  <input type="text" id="option2" formControlName="option2">
+  <input type="checkbox" id="correctOption2" formControlName="correctOption" value="option2">
+  <label for="correctOption2">Correta</label><p></p>
+
+  <label for="option3">Opção C:</label>
+  <input type="text" id="option3" formControlName="option3">
+  <input type="checkbox" id="correctOption3" formControlName="correctOption" value="option3">
+  <label for="correctOption3">Correta</label><p></p>
+
+  <button type="submit">Adicionar Pergunta</button>
 </form>
+
+
+

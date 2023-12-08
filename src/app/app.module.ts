@@ -33,6 +33,7 @@ import { ListRoomsComponent } from './component/list-rooms/list-rooms.component'
 import { RoomProfile } from './models/profileRoom';
 import { CreateQuestionComponent } from './component/create-question/create-question.component';
 import { StoreComponent } from './component/store/store.component';
+import { QuestionService } from './shared/question.service';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { StoreComponent } from './component/store/store.component';
     
   ],
   providers: [
+    QuestionService
   ],
   bootstrap: [AppComponent]
 

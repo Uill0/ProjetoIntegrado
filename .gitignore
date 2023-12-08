@@ -31,3 +31,6 @@ yarn-error.log
 /.prettierrc
 node_modules
 
+.vercel
+
+main.accd27837adeabe3

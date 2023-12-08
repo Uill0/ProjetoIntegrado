@@ -9,12 +9,13 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { UserProfile } from 'src/app/models/profileUser';
+import { CreateQuestionComponent } from '../create-question/create-question.component';
+import { QuestionService } from 'src/app/shared/question.service';
 
 
 interface VideoData {
   videoUrl: string;
   timestamp: string;
-  // Adicione outras propriedades necessárias
 }
 
 @Component({
@@ -23,7 +24,14 @@ interface VideoData {
   styleUrls: ['./rooms.component.css'],
 })
 export class RoomsComponent {
+
   @ViewChild('chatBox', { static: true }) private chatBoxRef!: ElementRef;
+
+  public toggleShowQuestion(): void {
+    this.showQuestions = !this.showQuestions;
+  }
+
+  showQuestions: boolean = false;
   title = 'firechat';
   app: FirebaseApp;
   db: Database;
@@ -45,14 +53,14 @@ export class RoomsComponent {
   user: any;
   userId: string | null = null;
 
-  
-
+ 
   constructor(
-    private formBuilder: FormBuilder,
-    private sanitizer: DomSanitizer,
-    private router: Router,
-    private userProfile: UserProfile,
-    private fireauth: AngularFireAuth
+    private formBuilder : FormBuilder,
+    private sanitizer : DomSanitizer,
+    private router : Router,
+    private userProfile : UserProfile,
+    private fireauth : AngularFireAuth,
+    private questionService : QuestionService,
   ) {
     this.app = initializeApp(environment.firebase);
     this.db = getDatabase(this.app);
@@ -147,3 +155,6 @@ export class RoomsComponent {
     this.router.navigate(['/create-question']);
   }
 }
+
+
+
