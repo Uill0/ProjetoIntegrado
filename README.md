@@ -18,5 +18,3 @@ Para instalar as dependencias para teste npm install
 npm install -g @angular/cli
 ng add @angular/fire
 ng add @angular/material
-
-asadsdasd
